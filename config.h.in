@@ -1,0 +1,46 @@
+/* Copyright 2001, 2002, 2003, 2004, 2005, 2006, 2007 Manuel Arriaga
+ *
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ */
+
+#undef DEBUG
+#define AT_FUNCTIONS 1
+
+#define PERSONAL_CONF_FILE ".libtrash"
+#define WARNING_STRING "Remember that libtrash is disabled."
+#define INTERCEPT_UNLINK YES
+#define INTERCEPT_RENAME YES
+#define INTERCEPT_FOPEN YES
+#define INTERCEPT_FREOPEN YES
+#define INTERCEPT_OPEN YES
+#define TRASH_CAN "Trash"
+#define IN_CASE_OF_FAILURE PROTECT
+#define SHOULD_WARN NO
+#define PROTECT_TRASH YES
+#define IGNORE_EXTENSIONS "o;log;aux"
+#define IGNORE_HIDDEN YES
+#define IGNORE_EDITOR_BACKUP YES
+#define IGNORE_EDITOR_TEMPORARY YES
+#define LIBTRASH_CONFIG_FILE_UNREMOVABLE YES
+#define GLOBAL_PROTECTION YES
+#define TRASH_SYSTEM_ROOT ".SYSTEM"
+#define UNREMOVABLE_DIRS "/bin;/boot;/dev;/etc;/lib;/sbin;/usr"
+#define TEMPORARY_DIRS "/run;/tmp;/var"
+#define USER_TEMPORARY_DIRS ""
+#define REMOVABLE_MEDIA_MOUNT_POINTS "/media;/mnt"
+#define EXCEPTIONS "/etc/mtab;/etc/resolv.conf"
+#define IGNORE_RE ""

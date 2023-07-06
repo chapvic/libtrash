@@ -1,0 +1,29 @@
+#!/bin/bash
+
+helper="link-helper"
+funcs="
+UNLINK_VERSION=unlink
+RENAME_VERSION=rename
+OPEN_VERSION=open
+OPEN64_VERSION=open64
+FOPEN_VERSION=fopen
+FOPEN64_VERSION=fopen64
+FREOPEN_VERSION=fopen
+FREOPEN64_VERSION=freopen64
+"
+
+cp -f config.h.in src/config.h
+
+if [ -x "$helper" ]; then
+    for fn in $funcs; do
+	f=$(echo "$fn" | awk -F'=' '{print $2}')
+	printf "#define %s \"%s\"\n" \
+	    $(echo "$fn" | awk -F'=' '{print $1}') \
+	    $(readelf -s $helper | grep ${f}@ | head -1 | awk -F'@' '{print $2}' | awk '{print $1}') >> src/config.h
+    done
+    exit 0
+else
+    echo "FATAL: Executable is not found - '$helper'!"
+fi
+
+exit 1

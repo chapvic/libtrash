@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Simple trash cleaner (strash wrapper)
+
+pushd $HOME > /dev/null
+strash -S 0
+popd > /dev/null
